@@ -23,7 +23,7 @@ namespace Container {
         Node* root;
     public:
         Node* RecursiveSearch(Node *root, int rank);
-        Node* RecursiveInsert(Node *&node, Conscript *data);
+        void RecursiveInsert(Node *&node, Conscript *data);
         void PrintInorder(Node* node);
         void PrintInorderCadet(Node *node);
         void CleanTree(Node* node);

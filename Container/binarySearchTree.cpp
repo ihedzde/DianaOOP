@@ -30,7 +30,7 @@ namespace Container {
     void BinarySearchTree::Insert(Conscript* data) {
         RecursiveInsert(root, data);
     }
-    Node *BinarySearchTree::RecursiveInsert(Node *&node, Conscript *data) {
+    void BinarySearchTree::RecursiveInsert(Node *&node, Conscript *data) {
         if (node == nullptr) {
             node = new Node(data);
         } else {
