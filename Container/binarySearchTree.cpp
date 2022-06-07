@@ -56,13 +56,13 @@ namespace Container {
     void BinarySearchTree::PrintInorderCadet(Node *node) {
         if (node == nullptr)
             return;
-        PrintInorder(node->left);
+        PrintInorderCadet(node->left);
         if(dynamic_cast<Cadet*>(node->data) != nullptr)
         {
             node->data->show();
             cout << endl;
         }
-        PrintInorder(node->right);
+        PrintInorderCadet(node->right);
     }
     void BinarySearchTree::PrintChildrenByRank(int rank) {
         auto * node = RecursiveSearch(root, rank);

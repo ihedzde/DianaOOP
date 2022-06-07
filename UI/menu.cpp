@@ -15,17 +15,23 @@ namespace UI {
         std::cout << "5. Use mock data" << std::endl;
         std::cout << "6. Load from file" << std::endl;
         std::cout << "7. Load in file" << std::endl;
+        std::cout << "8. Clean binary tree" << std::endl;
         std::cin >> variant;
         std::cout << "\r" << std::endl;
         return variant;
     }
 
     void Menu::MockTreeSetup(BinarySearchTree* bst) {
-        bst->Insert(new Captain("Spange", "Bob", 30, 5, 4));
-        bst->Insert(new Cadet("Heraldin", "Diana", 45, 19, "TheCadetOfAzov"));
-        bst->Insert(new Captain("Wonka", "Willy", 15, 89, 4));
-        bst->Insert(new Cadet("Arestovich", "Jennet", 10, 49, "AnotherCadet"));
-        bst->Insert(new Cadet("Jolly", "Angelina", 19, 56, "MovieCadet"));
+        bst->Insert(new Captain("Sydorov", "Sidr", 15, 30, 4));
+        bst->Insert(new Cadet("Ivanov", "Ivan", 8, 22, "2 polk"));
+        bst->Insert(new Captain("Petrov", "Petro", 45, 55, 25));
+        bst->Insert(new Cadet("Nykolayv", "Nykolay", 1, 21, "2 polk"));
+        bst->Insert(new Cadet("Aloxin", "Alixey", 10, 20, "2 polk"));
+        bst->Insert(new Cadet("Alexandrov", "Alexandr", 30, 35, "1 polk"));
+        bst->Insert(new Cadet("Nikitin", "Nikita", 55, 42, "1 polk"));
+        bst->Insert(new Captain("Pavlov", "Pavlo", 31, 43, 14));
+        bst->Insert(new Cadet("Valerych", "Valeriy", 13, 28, "3 polk"));
+        bst->Insert(new Cadet("Illich", "Illiya", 24, 29, "3 polk"));
     }
 
     Cadet *Menu::CreateCadet() {
@@ -96,6 +102,9 @@ namespace UI {
                 case '7':
                     tree->LoadIntoFile();
                     break;
+                case '8':
+                    delete tree;
+                    tree = new BinarySearchTree();
             }
         } while (variant != 'e');
         delete tree;
